@@ -1,0 +1,8 @@
+﻿<h1>List Of All Contacts:</h1>
+<ul>
+    @foreach (var contact in Model)
+    {
+        <li class="btn">@contact.Name ~ @contact.Number</li>
+    }
+</ul>
+    @Html.ActionLink("Back Home", "Index")

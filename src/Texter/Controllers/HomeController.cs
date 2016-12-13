@@ -11,6 +11,7 @@ namespace Texter.Controllers
 {
     public class HomeController : Controller
     {
+        private TexterDbContext db = new TexterDbContext();
         // GET: /<controller>/
         public IActionResult Index()
         {
@@ -34,6 +35,17 @@ namespace Texter.Controllers
         public IActionResult AddContact()
         {
             return View();
+        }
+        [HttpPost]
+        public IActionResult AddContact(Contact contact)
+        {
+            db.Contacts.Add(contact);
+            db.SaveChanges();
+            return RedirectToAction("ContactList");
+        }
+        public IActionResult ContactList()
+        {
+            return View(db.Contacts.ToList());
         }
     }
 }
