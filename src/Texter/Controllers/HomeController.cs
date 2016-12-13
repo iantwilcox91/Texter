@@ -31,5 +31,9 @@ namespace Texter.Controllers
             newMessage.Send();
             return RedirectToAction("Index");
         }
+        public IActionResult AddContact()
+        {
+            return View();
+        }
     }
 }
