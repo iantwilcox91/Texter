@@ -8,5 +8,16 @@ namespace Texter.Models
 {
     public class ContactDbContext : DbContext
     {
+        public ContactDbContext(DbContextOptions options) : base(options)
+        {
+
+        }
+        
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+        }
+
+        public virtual DbSet<Contact> Contacts { get; set; }
     }
 }
