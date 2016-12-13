@@ -31,8 +31,8 @@ namespace Texter
         {
             services.AddMvc();
             services.AddEntityFramework()
-                .AddDbContext<ContactDbContext>(options =>
-                options.useSqlServer(Configuration["ConnectionStrings:DefaultConnect"]));
+                .AddDbContext<TexterDbContext>(options =>
+                options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
             
 
             
